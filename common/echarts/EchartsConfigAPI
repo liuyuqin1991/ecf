@@ -1,0 +1,52 @@
+####标题####
+setTitleText 设置主标题
+setTitleIsShow 设置主标题是否显示
+setTitlePosition 设置主标题位置
+
+####Legend####
+setLegendIsShow 设置图表图例的是否显示
+setLegendPosition 设置图例的显示位置
+setLegendTextStyle 设置legend的文字样式
+setLegendAttr 设置legend的属性
+setLegendIcon 设置legend的icon
+
+####ToolBox####
+setToolBoxDisable 禁用图表工具栏
+setToolboxIsShow 设置图表工具栏的是否显示
+setToolboxPosition 设置图表工具栏的显示位置
+
+####Tooltip####
+setToolTipTextStyle 设置提示框的文字样式
+
+####Axis####
+setAxisIsShow 设置坐标轴是否显示
+setAxisLableIsShow 设置坐标轴lable是否显示
+setAxisSplitLineIsShow 设置分隔线是否显示
+setAxisTickIsShow 设置坐标轴小标记是否显示
+setAxisLableStyle 设置坐标轴显示lable的样式
+
+setXAxisIsBoundaryGap 设置X轴两端是否留白
+setXAxisMarkerLine 设置X轴辅助线
+
+setYAxisNameIsShow 设置Y轴名称是否显示
+setYAxisPercent 设置Y轴标签加上百分号，数据范围0~1`
+
+####series####
+setSeriesItemStyle 设置线条样式
+
+####grid####
+setGrid 设置grid的位置
+
+####地图####
+getSpecificMap 根据省市县名称获取该省或该市或该县行政区划地图
+setMapRoam 开启地图漫游组件 仅支持地图
+
+####饼图####
+setPieHollow 设置饼图空心
+setPieLabelToCenter 显示饼图lable到空心区域（必须是空心饼图）
+setPieLabelHide 隐藏饼图lable
+setPiePosition 设置饼图的显示位置
+
+
+
+
