@@ -6,6 +6,7 @@ setTitlePosition 设置主标题位置
 ####Legend####
 setLegendIsShow 设置图表图例的是否显示
 setLegendPosition 设置图例的显示位置
+setLegendSelectedMode 设置图例的点击模式
 setLegendTextStyle 设置legend的文字样式
 setLegendAttr 设置legend的属性
 setLegendIcon 设置legend的icon
@@ -17,6 +18,7 @@ setToolboxPosition 设置图表工具栏的显示位置
 
 ####Tooltip####
 setToolTipTextStyle 设置提示框的文字样式
+setToolTipFormatter 设置提示框的文本显示格式
 
 ####Axis####
 setAxisIsShow 设置坐标轴是否显示
@@ -27,9 +29,11 @@ setAxisLableStyle 设置坐标轴显示lable的样式
 
 setXAxisIsBoundaryGap 设置X轴两端是否留白
 setXAxisMarkerLine 设置X轴辅助线
+setXAxisLableTiltAndShowAll 设置X轴标签斜体且全部显示
 
 setYAxisNameIsShow 设置Y轴名称是否显示
 setYAxisPercent 设置Y轴标签加上百分号，数据范围0~1`
+setYAxisLableFormatter 设置Y轴标签名称的格式
 
 ####series####
 setSeriesItemStyle 设置线条样式

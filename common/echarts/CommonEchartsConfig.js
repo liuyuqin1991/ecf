@@ -28,7 +28,7 @@ class CommonEchartsConfig {
     /**
      * 折线图通用化配置调用入口
      * @param echartTitle 图表名称
-     * @param legendData 图例 例如['最低气温','最高气温']
+     * @param legendData 图例数组对象 [{name:"最低气温"},{name:"最高气温"}]
      * @param seriesData 数据 例如[['12°','15°','16°'],['22°','25°','32°']]，注意seriesData数组的长度要等于legendData的长度
      * @param tooltipCallBack 提示信息回调函数
      * @param xAxisData x轴类别信息 例如['五月','六月','七月']
@@ -505,28 +505,28 @@ class CommonEchartsConfig {
      */
     static setAxisLableStyle(option, XAxisLableStyle, YAxisLableStyle){
         if(XAxisLableStyle){
-          option.xAxis.forEach(function (value, i) {
-            if (!value.axisLabel){
-              value.axisLabel = {
-                textStyle : XAxisLableStyle
-              };
-            }
-            else{
-              value.axisLabel.textStyle = XAxisLableStyle;
-            }
-          });
+            option.xAxis.forEach(function (value, i) {
+                if (!value.axisLabel){
+                    value.axisLabel = {
+                        textStyle : XAxisLableStyle
+                    };
+                }
+                else{
+                    value.axisLabel.textStyle = XAxisLableStyle;
+                }
+            });
         }
         if(YAxisLableStyle){
-          option.yAxis.forEach(function (value, i) {
-            if (!value.axisLabel){
-              value.axisLabel = {
-                textStyle : YAxisLableStyle
-              };
-            }
-            else{
-              value.axisLabel.textStyle = YAxisLableStyle;
-            }
-          });
+            option.yAxis.forEach(function (value, i) {
+                if (!value.axisLabel){
+                    value.axisLabel = {
+                        textStyle : YAxisLableStyle
+                    };
+              }
+              else{
+                  value.axisLabel.textStyle = YAxisLableStyle;
+              }
+            });
         }
     }
 
@@ -587,6 +587,15 @@ class CommonEchartsConfig {
     }
 
     /**
+     * 设置legend的点击模式
+     * @param option
+     * @param selectedMode 点击模式，可选值：true，false，single，multiple
+     */
+    static setLegendSelectedMode(option,selectedMode){
+      option.legend.selectedMode = selectedMode;
+    }
+
+    /**
      * 设置grid的位置
      * @param x 直角坐标系内绘图网格左上角横坐标
      * @param y 直角坐标系内绘图网格左上角纵坐标
@@ -616,11 +625,11 @@ class CommonEchartsConfig {
      * @param YAxisNameIsShow
      */
     static setYAxisNameIsShow(option,YAxisNameIsShow){
-      option.yAxis.forEach(function (value, i) {
-        if (!YAxisNameIsShow){
-          value.name = "";
-        }
-      });
+        option.yAxis.forEach(function (value, i) {
+            if (!YAxisNameIsShow){
+                value.name = "";
+            }
+        });
     }
 
     /**
@@ -629,8 +638,48 @@ class CommonEchartsConfig {
      * @param textStyle 样式对象
      */
     static setToolTipTextStyle(option,textStyle){
-      option.tooltip.textStyle = textStyle;
+        option.tooltip.textStyle = textStyle;
     }
+
+    /**
+     * 设置提示框的文本显示格式
+     * @param option
+     * @param formatter
+     */
+    static setToolTipFormatter(option,formatter){
+      option.tooltip.formatter = formatter;
+    }
+
+    /**
+     * 设置Y轴标签名称的格式
+     * @param option
+     * @param formatter 可以是一个字符串，也可以是一个function {value} 表示当前数值
+     */
+    static setYAxisLableFormatter(option,formatter){
+        option.yAxis.forEach(function (value, i) {
+            value.axisLabel.formatter = formatter;
+        });
+    }
+
+    /**
+     * 设置X轴标签斜体且全部显示
+     * @param option
+     */
+    static setXAxisLableTiltAndShowAll(option){
+      option.xAxis.forEach(function (value, i) {
+        if(value.axisLabel){
+          value.axisLabel.interval = 0;
+          value.axisLabel.rotate = 40;
+        }
+        else{
+          value.axisLabel = {
+            interval:0,
+            rotate:40
+          };
+        }
+      });
+    }
+
 }
 
 export { CommonEchartsConfig };
