@@ -1,15 +1,21 @@
+####通用####
+getColorArr 获取颜色数组
+
 ####标题####
 setTitleText 设置主标题
 setTitleIsShow 设置主标题是否显示
 setTitlePosition 设置主标题位置
 
 ####Legend####
+定制方法
 setLegendIsShow 设置图表图例的是否显示
 setLegendPosition 设置图例的显示位置
 setLegendSelectedMode 设置图例的点击模式
 setLegendTextStyle 设置legend的文字样式
-setLegendAttr 设置legend的属性
 setLegendIcon 设置legend的icon
+setLegendFormatter 设置legend显示回调格式
+通用方法(涉及多个属性)
+setLegendAttr 设置legend的属性
 
 ####ToolBox####
 setToolBoxDisable 禁用图表工具栏
@@ -19,6 +25,9 @@ setToolboxPosition 设置图表工具栏的显示位置
 ####Tooltip####
 setToolTipTextStyle 设置提示框的文字样式
 setToolTipFormatter 设置提示框的文本显示格式
+setTooltipPosition 设置提示框的显示位置
+通用方法(涉及多个属性)
+setTooltipAttr 设置Tooltip的属性
 
 ####Axis####
 setAxisIsShow 设置坐标轴是否显示
@@ -34,9 +43,22 @@ setXAxisLableTiltAndShowAll 设置X轴标签斜体且全部显示
 setYAxisNameIsShow 设置Y轴名称是否显示
 setYAxisPercent 设置Y轴标签加上百分号，数据范围0~1`
 setYAxisLableFormatter 设置Y轴标签名称的格式
+通用方法(涉及多个属性)
+setYAxisAttr 设置Y轴的通用方法
+setXAxisAttr 设置X轴的通用方法
 
 ####series####
-setSeriesItemStyle 设置线条样式
+setSeriesItemStyle 设置线条样式（直角系）
+setSeriesAreaStyle 设置区域填充样式（直角系）
+setSeriesIsSmooth 设置线条是否平滑显示（直角系）
+setSeriesSameYAxis 设置相同Y坐标轴（直角系）（只针对2个series）
+setSeriesPieItemStyle 设置线条样式（饼图）
+setSeriesIsHoverAnimation 设置饼图hover扇区是否放大（饼图）
+setSeriesSameYAxisShow 设置多个图表同一套YAxis显示 （饼图）
+setSeriesZ 设置Z值
+
+通用方法(涉及多个属性)
+setSeriesAttr 设置series的通用方法
 
 ####grid####
 setGrid 设置grid的位置
@@ -45,12 +67,19 @@ setGrid 设置grid的位置
 getSpecificMap 根据省市县名称获取该省或该市或该县行政区划地图
 setMapRoam 开启地图漫游组件 仅支持地图
 
+通用方法(涉及多个属性)
+setMapAttr 设置Map属性的通用方法
+setVisualMap 设置VisualMap对象(echarts2为dataRange，echarts3转变为visualMap，但也兼容dataRange)
+
 ####饼图####
+定制方法
 setPieHollow 设置饼图空心
 setPieLabelToCenter 显示饼图lable到空心区域（必须是空心饼图）
-setPieLabelHide 隐藏饼图lable
+setPieLabelIsShow 设置饼图lable是否显示
+setPieLabelFormatter 设置饼图lable自定义展示
 setPiePosition 设置饼图的显示位置
-
-
-
-
+setPieItemStyle 个性化配置饼图样式
+setPieAddNestedPie 增加嵌套饼图
+setPieZ 设置饼图二级层叠控制
+通用方法
+setPieSeriesDataAttr 设置饼图Series的Data属性
